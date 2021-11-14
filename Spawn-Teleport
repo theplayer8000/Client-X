@@ -1,0 +1,10 @@
+local pos = Vector3.new(337, 249, 849)
+
+local ts = game:GetService('TweenService')
+
+local plr = game.Players.LocalPlayer
+
+local Char = plr.Character or plr.CharacterAdded:wait()
+
+local t = ts:create(Char.Humanoid.RootPart,TweenInfo.new(1 --[[ time ]]), {CFrame = CFrame.new(pos)}  )
+t:Play()
