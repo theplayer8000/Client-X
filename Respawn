@@ -1,0 +1,28 @@
+local SavePosition = Instance.new("TextLabel")
+game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+            game.Lighting.Blur.Enabled = false
+            game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+            game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+            lastlocationx = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+            lastlocationy = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+            lastlocationz = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+            wait()
+            SavePosition.Text = "Last Place: " .. lastlocationx .. "," .. lastlocationy .. "," .. lastlocationz .. ","
+            --print(tostring(SavePosition.Text))
+            --print("Player " ..tostring(game.Players.LocalPlayer.Name).. " Respawn")
+            --print(tostring(SavePosition.Text))
+            wait(0.599)
+            --print("screengui disabled")
+            repeat
+                wait(0.999)
+            until game.Players.LocalPlayer.Character.Humanoid
+            --print("Teleporting back to " ..tostring(SavePosition.Text))
+            local FindHum = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                CFrame.new(lastlocationx, lastlocationy, lastlocationz)
+            wait()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                CFrame.new(lastlocationx, lastlocationy, lastlocationz)
+            wait()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                CFrame.new(lastlocationx, lastlocationy, lastlocationz)
