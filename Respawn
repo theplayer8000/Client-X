@@ -23,7 +23,7 @@ wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastlocationx, lastlocationy, lastlocationz)
 wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastlocationx, lastlocationy, lastlocationz)
-
+wait(5)
 game:GetService("Players").LocalPlayer:WaitForChild("Character").LeftHand.Aura1:Destroy()
 game:GetService("Players").LocalPlayer:WaitForChild("Character").LeftHand.Aura2:Destroy()
 game:GetService("Players").LocalPlayer:WaitForChild("Character").LeftHand.Aura3:Destroy()
@@ -34,3 +34,4 @@ game:GetService("Players").LocalPlayer:WaitForChild("Character").UpperTorso.Aura
 game:GetService("Players").LocalPlayer:WaitForChild("Character").UpperTorso.Aura2:Destroy()
 game:GetService("Players").LocalPlayer:WaitForChild("Character").RightUpperLeg.Aura1:Destroy()
 game:GetService("Players").LocalPlayer:WaitForChild("Character").LeftUpperLeg.Aura1:Destroy()
+print("aura gone")
