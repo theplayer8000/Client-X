@@ -1,0 +1,173 @@
+local playertokill = ""
+_G.toggle = false
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local X = Material.Load({
+    Title = "Void:\n(made by 1xToxsins#8515)\n major credits to Corey#7787 for helping",
+    Style = 6,
+    SizeX = 280,
+    SizeY = 140,
+    Theme = "Dark"
+})
+
+local Main = X.New({
+    Title = "Main"
+})
+
+local playerr = Main.TextField({
+    Text = "Player",
+    Callback = function(Value)
+        playertokill = Value
+		print(playertokill)
+    end
+})
+
+local B = Main.Toggle({
+    Text = "Loop Void",
+    Callback = function(Value)
+        _G.toggle = Value
+    end,
+    Enabled = false
+})
+
+
+local Imput = game:GetService("UserInputService")
+	Imput.InputBegan:connect(function(inst)
+	if inst.KeyCode == Enum.KeyCode.K then
+if _G.toggle then
+game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+local player = game.Players.LocalPlayer
+local cmdlp = game.Players.LocalPlayer
+local cmdp = game:GetService("Players")
+local cmdl = game:GetService("Lighting")
+local cmdrs = game:GetService("ReplicatedStorage")
+local cmdrs2 = game:GetService("RunService")
+local cmdts = game:GetService("TweenService")
+local cmdvu = game:GetService("VirtualUser")
+local cmduis = game:GetService("UserInputService")
+local Mouses = cmdlp:GetMouse()
+
+
+function findplr(args)
+	if args == "me" then
+		return cmdlp
+	elseif args == "random" then 
+		return cmdp:GetPlayers()[math.random(1,#cmdp:GetPlayers())]
+	elseif args == "new" then
+		local vAges = {} 
+		for _,v in pairs(cmdp:GetPlayers()) do
+			if v.AccountAge < 30 and v ~= cmdlp then
+				vAges[#vAges+1] = v
+			end
+		end
+		return vAges[math.random(1,#vAges)]
+	elseif args == "old" then
+		local vAges = {} 
+		for _,v in pairs(cmdp:GetPlayers()) do
+			if v.AccountAge > 30 and v ~= cmdlp then
+				vAges[#vAges+1] = v
+			end
+		end
+		return vAges[math.random(1,#vAges)]
+	elseif args == "bacon" then
+		local vAges = {} 
+		for _,v in pairs(cmdp:GetPlayers()) do
+			if v.Character:FindFirstChild("Pal Hair") or v.Character:FindFirstChild("Kate Hair") and v ~= cmdlp then
+				vAges[#vAges+1] = v
+			end
+		end
+		return vAges[math.random(1,#vAges)]
+	elseif args == "friend" then
+		local vAges = {} 
+		for _,v in pairs(cmdp:GetPlayers()) do
+			if v:IsFriendsWith(cmdlp.UserId) and v ~= cmdlp then
+				vAges[#vAges+1] = v
+			end
+		end
+		return vAges[math.random(1,#vAges)]
+	elseif args == "notfriend" then
+		local vAges = {} 
+		for _,v in pairs(cmdp:GetPlayers()) do
+			if not v:IsFriendsWith(cmdlp.UserId) and v ~= cmdlp then
+				vAges[#vAges+1] = v
+			end
+		end
+		return vAges[math.random(1,#vAges)]
+	elseif args == "ally" then
+		local vAges = {} 
+		for _,v in pairs(cmdp:GetPlayers()) do
+			if v.Team == cmdlp.Team and v ~= cmdlp then
+				vAges[#vAges+1] = v
+			end
+		end
+		return vAges[math.random(1,#vAges)]
+	elseif args == "enemy" then
+		local vAges = {} 
+		for _,v in pairs(cmdp:GetPlayers()) do
+			if v.Team ~= cmdlp.Team then
+				vAges[#vAges+1] = v
+			end
+		end
+		return vAges[math.random(1,#vAges)]
+	elseif args == "near" then
+		local vAges = {} 
+		for _,v in pairs(cmdp:GetPlayers()) do
+			if v ~= cmdlp then
+				local math = (v.Character:FindFirstChild("HumanoidRootPart").Position - cmdlp.Character.HumanoidRootPart.Position).magnitude
+				if math < 30 then
+					vAges[#vAges+1] = v
+				end
+			end
+		end
+		return vAges[math.random(1,#vAges)]
+	elseif args == "far" then
+		local vAges = {} 
+		for _,v in pairs(cmdp:GetPlayers()) do
+			if v ~= cmdlp then
+				local math = (v.Character:FindFirstChild("HumanoidRootPart").Position - cmdlp.Character.HumanoidRootPart.Position).magnitude
+				if math > 30 then
+					vAges[#vAges+1] = v
+				end
+			end
+		end
+		return vAges[math.random(1,#vAges)]
+	else 
+		for _,v in pairs(cmdp:GetPlayers()) do
+			if string.find(string.lower(v.Name),string.lower(args)) then
+				return v
+			end
+		end
+	end
+end
+
+ local target = findplr(playertokill or cmdlp.Name)
+if not target then
+    warn("*","Player does not exist!")
+    return
+end
+    cmdlp.Character.Humanoid.Name = 1
+    local l = cmdlp.Character["1"]:Clone()
+    l.Parent = cmdlp.Character
+    l.Name = "Humanoid"
+    wait(.2)
+    cmdlp.Character["1"]:Destroy()
+    workspace.CurrentCamera.CameraSubject = cmdlp.Character
+    cmdlp.Character.Humanoid.DisplayDistanceType = "None"
+    cmdlp.Character.Humanoid:UnequipTools()
+    local v = cmdlp.Backpack:FindFirstChildOfClass("Tool")
+    if not v then
+        warn("*","Tool not found!")
+        return
+    end
+    v.Parent = cmdlp.Character
+    v.Parent = cmdlp.Character.HumanoidRootPart
+    firetouchinterest(target.Character.HumanoidRootPart, v.Handle, 0)
+    firetouchinterest(target.Character.HumanoidRootPart, v.Handle, 1)
+    pcall(function() cmdlp.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000000000000000000000, 0) end)
+    wait(.3)
+    cmdlp.Character:Remove()
+    cmdlp.CharacterAdded:Wait()
+end
+end
+end)
