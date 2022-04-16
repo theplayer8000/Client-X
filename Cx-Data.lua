@@ -1,3 +1,3 @@
-_G.VersionInfo = "Version 0.0.1"
+_G.VersionInfo = "Version 0.0.5"
 _G.update = false
 _G.DataLoaded = false
