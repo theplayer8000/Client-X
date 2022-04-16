@@ -1,5 +1,5 @@
--- Instances:
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/Cx-Data.lua"))();
 local ClientX = {
 	ClientX = Instance.new("ScreenGui"),
 	LoadingFrame = Instance.new("Frame"),
@@ -28,6 +28,7 @@ local ClientX = {
 	shadow = Instance.new("Frame"),
 	UICorner_5 = Instance.new("UICorner"),
 	UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint"),
+	VersionInfo = Instance.new("TextLabel"),
 	MainHubFrame = Instance.new("Frame"),
 	UIStroke_5 = Instance.new("UIStroke"),
 	UIGradient_2 = Instance.new("UIGradient"),
@@ -389,6 +390,19 @@ ClientX.UICorner_5.Parent = ClientX.shadow
 
 ClientX.UIAspectRatioConstraint_6.Parent = ClientX.shadow
 ClientX.UIAspectRatioConstraint_6.AspectRatio = 1.903
+
+ClientX.VersionInfo.Name = "VersionInfo"
+ClientX.VersionInfo.Parent = ClientX.LoadingFrame
+ClientX.VersionInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ClientX.VersionInfo.BackgroundTransparency = 1.000
+ClientX.VersionInfo.Position = UDim2.new(0.353558898, 0, 0.825835466, 0)
+ClientX.VersionInfo.Size = UDim2.new(0, 200, 0, 50)
+ClientX.VersionInfo.Font = Enum.Font.PermanentMarker
+ClientX.VersionInfo.Text = "Version ?_?_?"
+ClientX.VersionInfo.TextColor3 = Color3.fromRGB(0, 0, 0)
+ClientX.VersionInfo.TextScaled = true
+ClientX.VersionInfo.TextSize = 14.000
+ClientX.VersionInfo.TextWrapped = true
 
 ClientX.MainHubFrame.Name = "MainHubFrame"
 ClientX.MainHubFrame.Parent = ClientX.ClientX
@@ -1914,7 +1928,7 @@ ClientX.UIStroke_29.Parent = ClientX.Friendsonline
 
 -- Scripts:
 
-local function MZKY_fake_script() -- ClientX.LoadingFrame.BackgroundColours 
+local function DVCGUAF_fake_script() -- ClientX.LoadingFrame.BackgroundColours 
 	local script = Instance.new('LocalScript', ClientX.LoadingFrame)
 
 	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
@@ -1929,17 +1943,13 @@ local function MZKY_fake_script() -- ClientX.LoadingFrame.BackgroundColours
 		end)
 	end
 end
-coroutine.wrap(MZKY_fake_script)()
-local function MMXBJ_fake_script() -- ClientX.LoadingFrame.LoadingScript 
+coroutine.wrap(DVCGUAF_fake_script)()
+local function HAUJLU_fake_script() -- ClientX.LoadingFrame.Loading_Handler 
 	local script = Instance.new('LocalScript', ClientX.LoadingFrame)
 
 	pcall(
 		function()
-			while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetService("Players").LocalPlayer or
-				not game:GetService("Players").LocalPlayer.PlayerGui do
-				wait()
-			end
-	
+			local _Version = script.Parent.VersionInfo
 			local bar = script.Parent.Bar
 			local filler = script.Parent.Bar.Filter
 			local percentage = script.Parent.Bar.Percent
@@ -1947,7 +1957,21 @@ local function MMXBJ_fake_script() -- ClientX.LoadingFrame.LoadingScript
 			local hubMenu = script.Parent.Parent.MainHubFrame
 			local image = script.Parent.Logo
 	
-			function baba()
+			local function VS_Info()
+				_Version.Text = "Getting Version Data"
+				wait(0.5)
+				_Version.Text = "Getting Version Data."
+				wait(0.5)
+				_Version.Text = "Getting Version Data.."
+				wait(0.5)
+				_Version.Text = "Getting Version Data..."
+				wait(0.5)
+				_Version.Text = "Loaded."
+				wait(0.5)
+				_Version.Text = _G.VersionInfo
+			end
+	
+			local function baba()
 				--wait(2)
 				_G.LoadingFinised = false
 				for i = 1, 100 do
@@ -2041,6 +2065,7 @@ local function MMXBJ_fake_script() -- ClientX.LoadingFrame.LoadingScript
 				_G.LoadingFinished = true
 			end
 	
+			VS_Info()
 			baba()
 	
 			repeat
@@ -2053,8 +2078,8 @@ local function MMXBJ_fake_script() -- ClientX.LoadingFrame.LoadingScript
 	)
 	
 end
-coroutine.wrap(MMXBJ_fake_script)()
-local function IHSRR_fake_script() -- ClientX.ClientX.Data 
+coroutine.wrap(HAUJLU_fake_script)()
+local function DPJQQHS_fake_script() -- ClientX.ClientX.Data 
 	local script = Instance.new('LocalScript', ClientX.ClientX)
 
 	
@@ -2075,9 +2100,6 @@ local function IHSRR_fake_script() -- ClientX.ClientX.Data
 	end
 	
 	
-	_G.update = false
-	
-	_G.DataLoaded = false
 	
 	script.Parent.LoadingFrame.Visible = true
 	
@@ -2410,8 +2432,8 @@ local function IHSRR_fake_script() -- ClientX.ClientX.Data
 	AntiAfk()
 	
 end
-coroutine.wrap(IHSRR_fake_script)()
-local function WGBGJ_fake_script() -- ClientX.ClientX.open menu 
+coroutine.wrap(DPJQQHS_fake_script)()
+local function MOYWF_fake_script() -- ClientX.ClientX.open menu 
 	local script = Instance.new('LocalScript', ClientX.ClientX)
 
 	local Main = script.Parent.MainHubFrame
@@ -2475,8 +2497,8 @@ local function WGBGJ_fake_script() -- ClientX.ClientX.open menu
 	
 	
 end
-coroutine.wrap(WGBGJ_fake_script)()
-local function EMTKPMU_fake_script() -- ClientX.LocalPlayer.Open Player Settings 
+coroutine.wrap(MOYWF_fake_script)()
+local function UUCQ_fake_script() -- ClientX.LocalPlayer.Open Player Settings 
 	local script = Instance.new('LocalScript', ClientX.LocalPlayer)
 
 	local setting = script.Parent.Parent.Parent.Settings 
@@ -2511,8 +2533,8 @@ local function EMTKPMU_fake_script() -- ClientX.LocalPlayer.Open Player Settings
 	
 	
 end
-coroutine.wrap(EMTKPMU_fake_script)()
-local function TZYEN_fake_script() -- ClientX.Music.Open Music 
+coroutine.wrap(UUCQ_fake_script)()
+local function KBUEMT_fake_script() -- ClientX.Music.Open Music 
 	local script = Instance.new('LocalScript', ClientX.Music)
 
 	local Music = script.Parent.Parent.Parent.MusicFrame -- change “Frame” to the name of the frame
@@ -2546,8 +2568,8 @@ local function TZYEN_fake_script() -- ClientX.Music.Open Music
 		MusicENd = Music.Position
 	end)
 end
-coroutine.wrap(TZYEN_fake_script)()
-local function KCQDNOO_fake_script() -- ClientX.Friends.Open FriendList 
+coroutine.wrap(KBUEMT_fake_script)()
+local function GGNTVWV_fake_script() -- ClientX.Friends.Open FriendList 
 	local script = Instance.new('LocalScript', ClientX.Friends)
 
 	local PFList = script.Parent.Parent.Parent["Friends online"]
@@ -2579,8 +2601,8 @@ local function KCQDNOO_fake_script() -- ClientX.Friends.Open FriendList
 		PendPos = PFList.Position
 	end)
 end
-coroutine.wrap(KCQDNOO_fake_script)()
-local function XLEBXAM_fake_script() -- ClientX.PlayerList.Open PlayerList 
+coroutine.wrap(GGNTVWV_fake_script)()
+local function CZYOP_fake_script() -- ClientX.PlayerList.Open PlayerList 
 	local script = Instance.new('LocalScript', ClientX.PlayerList)
 
 	local PList = script.Parent.Parent.Parent.Pscroller
@@ -2618,8 +2640,8 @@ local function XLEBXAM_fake_script() -- ClientX.PlayerList.Open PlayerList
 		PendPos = PList.Position
 	end)
 end
-coroutine.wrap(XLEBXAM_fake_script)()
-local function KFDDE_fake_script() -- ClientX.Scripts.Open Scripts 
+coroutine.wrap(CZYOP_fake_script)()
+local function CQUJ_fake_script() -- ClientX.Scripts.Open Scripts 
 	local script = Instance.new('LocalScript', ClientX.Scripts)
 
 	local Scripts = script.Parent.Parent.Parent.PvpFrame -- change “Frame” to the name of the frame
@@ -2651,8 +2673,8 @@ local function KFDDE_fake_script() -- ClientX.Scripts.Open Scripts
 		Scripts_End = Scripts.Position
 	end)
 end
-coroutine.wrap(KFDDE_fake_script)()
-local function JXTSH_fake_script() -- ClientX.Kos.Open Kos 
+coroutine.wrap(CQUJ_fake_script)()
+local function XVLHW_fake_script() -- ClientX.Kos.Open Kos 
 	local script = Instance.new('LocalScript', ClientX.Kos)
 
 	local Kos = script.Parent.Parent.Parent.KosFrame-- change “Kos” to the name of the Kos
@@ -2685,8 +2707,8 @@ local function JXTSH_fake_script() -- ClientX.Kos.Open Kos
 		Kos_End = Kos.Position
 	end)
 end
-coroutine.wrap(JXTSH_fake_script)()
-local function FXRBMZ_fake_script() -- ClientX.MainHubFrame.Time Handler 
+coroutine.wrap(XVLHW_fake_script)()
+local function MGPSNAX_fake_script() -- ClientX.MainHubFrame.Time Handler 
 	local script = Instance.new('LocalScript', ClientX.MainHubFrame)
 
 	function GetDate()
@@ -2772,8 +2794,8 @@ local function FXRBMZ_fake_script() -- ClientX.MainHubFrame.Time Handler
 	end
 	
 end
-coroutine.wrap(FXRBMZ_fake_script)()
-local function ILMNDS_fake_script() -- ClientX.CreditsButton.Open Credits 
+coroutine.wrap(MGPSNAX_fake_script)()
+local function VHKZ_fake_script() -- ClientX.CreditsButton.Open Credits 
 	local script = Instance.new('LocalScript', ClientX.CreditsButton)
 
 	local Credits = script.Parent.Parent.Parent.CreditsFrame -- change “Frame” to the name of the frame
@@ -2807,8 +2829,8 @@ local function ILMNDS_fake_script() -- ClientX.CreditsButton.Open Credits
 		Credits_End_Pos = Credits.Position
 	end)
 end
-coroutine.wrap(ILMNDS_fake_script)()
-local function DUON_fake_script() -- ClientX.MainHubFrame.Dragify 
+coroutine.wrap(VHKZ_fake_script)()
+local function PHDF_fake_script() -- ClientX.MainHubFrame.Dragify 
 	local script = Instance.new('LocalScript', ClientX.MainHubFrame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -2851,8 +2873,8 @@ local function DUON_fake_script() -- ClientX.MainHubFrame.Dragify
 		end
 	end)
 end
-coroutine.wrap(DUON_fake_script)()
-local function DGNF_fake_script() -- ClientX.keybindbox.KeyRebind 
+coroutine.wrap(PHDF_fake_script)()
+local function XAXMG_fake_script() -- ClientX.keybindbox.KeyRebind 
 	local script = Instance.new('LocalScript', ClientX.keybindbox)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -2889,8 +2911,8 @@ local function DGNF_fake_script() -- ClientX.keybindbox.KeyRebind
 	)
 	
 end
-coroutine.wrap(DGNF_fake_script)()
-local function GQCNCEQ_fake_script() -- ClientX.Settings.Handler 
+coroutine.wrap(XAXMG_fake_script)()
+local function HJFDVLG_fake_script() -- ClientX.Settings.Handler 
 	local script = Instance.new('LocalScript', ClientX.Settings)
 
 	pcall(function()
@@ -3062,8 +3084,8 @@ local function GQCNCEQ_fake_script() -- ClientX.Settings.Handler
 	
 	end)
 end
-coroutine.wrap(GQCNCEQ_fake_script)()
-local function XSBRRU_fake_script() -- ClientX.Search.Player completer 
+coroutine.wrap(HJFDVLG_fake_script)()
+local function USEDN_fake_script() -- ClientX.Search.Player completer 
 	local script = Instance.new('LocalScript', ClientX.Search)
 
 	pcall(function()
@@ -3192,8 +3214,8 @@ local function XSBRRU_fake_script() -- ClientX.Search.Player completer
 		)
 	end)
 end
-coroutine.wrap(XSBRRU_fake_script)()
-local function OAUPNNP_fake_script() -- ClientX.Settings.Dragify 
+coroutine.wrap(USEDN_fake_script)()
+local function VPZZTV_fake_script() -- ClientX.Settings.Dragify 
 	local script = Instance.new('LocalScript', ClientX.Settings)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -3236,8 +3258,8 @@ local function OAUPNNP_fake_script() -- ClientX.Settings.Dragify
 		end
 	end)
 end
-coroutine.wrap(OAUPNNP_fake_script)()
-local function GLSJL_fake_script() -- ClientX.Next_Page_2.next page 
+coroutine.wrap(VPZZTV_fake_script)()
+local function KBLJ_fake_script() -- ClientX.Next_Page_2.next page 
 	local script = Instance.new('LocalScript', ClientX.Next_Page_2)
 
 	local settings_Tab1 = script.Parent.Parent
@@ -3246,8 +3268,8 @@ local function GLSJL_fake_script() -- ClientX.Next_Page_2.next page
 		
 	end
 end
-coroutine.wrap(GLSJL_fake_script)()
-local function RWNFT_fake_script() -- ClientX.MusicFrame.Music Handler 
+coroutine.wrap(KBLJ_fake_script)()
+local function NXOIFCB_fake_script() -- ClientX.MusicFrame.Music Handler 
 	local script = Instance.new('LocalScript', ClientX.MusicFrame)
 
 	Sound_Folder = script.Parent.Parent["Cx-Sound_Data"]
@@ -3362,8 +3384,8 @@ local function RWNFT_fake_script() -- ClientX.MusicFrame.Music Handler
 	
 	
 end
-coroutine.wrap(RWNFT_fake_script)()
-local function CWRU_fake_script() -- ClientX.MusicFrame.LocalScript 
+coroutine.wrap(NXOIFCB_fake_script)()
+local function GVDVONR_fake_script() -- ClientX.MusicFrame.LocalScript 
 	local script = Instance.new('LocalScript', ClientX.MusicFrame)
 
 	--[[
@@ -3378,8 +3400,8 @@ local function CWRU_fake_script() -- ClientX.MusicFrame.LocalScript
 	end
 	]]
 end
-coroutine.wrap(CWRU_fake_script)()
-local function FLGO_fake_script() -- ClientX.MusicFrame.Dragify 
+coroutine.wrap(GVDVONR_fake_script)()
+local function BJYPOOU_fake_script() -- ClientX.MusicFrame.Dragify 
 	local script = Instance.new('LocalScript', ClientX.MusicFrame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -3422,8 +3444,8 @@ local function FLGO_fake_script() -- ClientX.MusicFrame.Dragify
 		end
 	end)
 end
-coroutine.wrap(FLGO_fake_script)()
-local function LQFOOY_fake_script() -- ClientX.PvpFrame.Dragify 
+coroutine.wrap(BJYPOOU_fake_script)()
+local function LPJD_fake_script() -- ClientX.PvpFrame.Dragify 
 	local script = Instance.new('LocalScript', ClientX.PvpFrame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -3466,8 +3488,8 @@ local function LQFOOY_fake_script() -- ClientX.PvpFrame.Dragify
 		end
 	end)
 end
-coroutine.wrap(LQFOOY_fake_script)()
-local function ZMMX_fake_script() -- ClientX.UIGradient_10.LocalScript 
+coroutine.wrap(LPJD_fake_script)()
+local function ZYJWR_fake_script() -- ClientX.UIGradient_10.LocalScript 
 	local script = Instance.new('LocalScript', ClientX.UIGradient_10)
 
 	grad = script.Parent -- the gradient
@@ -3508,8 +3530,8 @@ local function ZMMX_fake_script() -- ClientX.UIGradient_10.LocalScript
 	end
 	--]]
 end
-coroutine.wrap(ZMMX_fake_script)()
-local function JURA_fake_script() -- ClientX.CreditsFrame.infoHandler 
+coroutine.wrap(ZYJWR_fake_script)()
+local function VJSTFOA_fake_script() -- ClientX.CreditsFrame.infoHandler 
 	local script = Instance.new('LocalScript', ClientX.CreditsFrame)
 
 	local frame = script.Parent
@@ -3523,8 +3545,8 @@ local function JURA_fake_script() -- ClientX.CreditsFrame.infoHandler
 	
 	frame.PlayerName.Text = player.Name-- this aswell
 end
-coroutine.wrap(JURA_fake_script)()
-local function QKGDI_fake_script() -- ClientX.CreditsFrame.Dragify 
+coroutine.wrap(VJSTFOA_fake_script)()
+local function PDKSHA_fake_script() -- ClientX.CreditsFrame.Dragify 
 	local script = Instance.new('LocalScript', ClientX.CreditsFrame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -3567,8 +3589,8 @@ local function QKGDI_fake_script() -- ClientX.CreditsFrame.Dragify
 		end
 	end)
 end
-coroutine.wrap(QKGDI_fake_script)()
-local function OXFE_fake_script() -- ClientX.ClientX.PHandler 
+coroutine.wrap(PDKSHA_fake_script)()
+local function ZCVB_fake_script() -- ClientX.ClientX.PHandler 
 	local script = Instance.new('LocalScript', ClientX.ClientX)
 
 	--game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)
@@ -3692,8 +3714,8 @@ local function OXFE_fake_script() -- ClientX.ClientX.PHandler
 		end)
 	end
 end
-coroutine.wrap(OXFE_fake_script)()
-local function BJKTBW_fake_script() -- ClientX.Pscroller.Dragify 
+coroutine.wrap(ZCVB_fake_script)()
+local function TJFBMBM_fake_script() -- ClientX.Pscroller.Dragify 
 	local script = Instance.new('LocalScript', ClientX.Pscroller)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -3736,8 +3758,8 @@ local function BJKTBW_fake_script() -- ClientX.Pscroller.Dragify
 		end
 	end)
 end
-coroutine.wrap(BJKTBW_fake_script)()
-local function PHWIC_fake_script() -- ClientX.ClientX.Friends_Handler 
+coroutine.wrap(TJFBMBM_fake_script)()
+local function OBCAA_fake_script() -- ClientX.ClientX.Friends_Handler 
 	local script = Instance.new('LocalScript', ClientX.ClientX)
 
 	local Players = game:GetService("Players")
@@ -3874,8 +3896,8 @@ local function PHWIC_fake_script() -- ClientX.ClientX.Friends_Handler
 	end
 	
 end
-coroutine.wrap(PHWIC_fake_script)()
-local function YFZOXJH_fake_script() -- ClientX.Friendsonline.Dragify 
+coroutine.wrap(OBCAA_fake_script)()
+local function NLFRE_fake_script() -- ClientX.Friendsonline.Dragify 
 	local script = Instance.new('LocalScript', ClientX.Friendsonline)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -3918,4 +3940,4 @@ local function YFZOXJH_fake_script() -- ClientX.Friendsonline.Dragify
 		end
 	end)
 end
-coroutine.wrap(YFZOXJH_fake_script)()
+coroutine.wrap(NLFRE_fake_script)()
