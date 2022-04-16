@@ -1,3 +1,0 @@
--- not made by me
--- made by Blissful#4992
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Blissful4992/Miscellaneous/main/StreamSniper.lua"))()
