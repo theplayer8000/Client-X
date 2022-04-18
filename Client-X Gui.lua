@@ -1,5 +1,5 @@
 local cx = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/Client-X%20Gui.lua"))();'
-
+-- Rexecutes Cx on Rejoing or ServerHop
 if syn.queue_on_teleport then
     syn.queue_on_teleport(cx)
 end
