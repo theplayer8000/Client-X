@@ -1,5 +1,5 @@
 _G.VersionInfo = "Version 1.1.1"
-_G.update = true
+_G.update = false
 _G.DataLoaded = false
 _G.ExecutionLogs = false
 _G.CxDown = false
