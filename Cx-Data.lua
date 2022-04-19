@@ -3,4 +3,4 @@ _G.update = true
 _G.DataLoaded = false
 _G.ExecutionLogs = false
 _G.CxDown = true
-_G.UpdateHrs = "Estimated Time : 4 Hrs"
+_G.UpdateHrs = "4 Hrs"
