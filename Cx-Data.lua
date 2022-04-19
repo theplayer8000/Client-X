@@ -1,4 +1,4 @@
-_G.VersionInfo = "Version 1.0.2"
+_G.VersionInfo = "Version 1.0.5"
 _G.update = true
 _G.DataLoaded = false
 _G.ExecutionLogs = false
