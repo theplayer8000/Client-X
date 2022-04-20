@@ -4,5 +4,5 @@ _G.DataLoaded = false
 _G.ExecutionLogs = false
 _G.CxDown = false
 _G.KickMessage = "You have been kicked from the game "
-_G.KickData = "Reason : Client-X is Currently updating."
-_G.UpdateHrs = " And will be down for the next : 4 Hrs \n Sorry for any inconveniences."
+_G.KickData = "Reason : Down For maintenance."
+_G.UpdateHrs = ""
