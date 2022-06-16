@@ -5,7 +5,7 @@ while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetServi
     not game:GetService("Players").LocalPlayer.PlayerGui do
     wait(2)
 end
-getgenv().autotrain = true
+
 local FsMain = {"1xToxsins", "vSebyy", "hikiin", "HxQueennn", "0riginalHybridKlaus", "IV9M", "IV6M", "xqCorey", "varlxer", "xSirTim"}
 local PpMain = {"XiiUnWorthy"}
 
@@ -110,7 +110,6 @@ wait(3)
                 speaker.CameraMaxZoomDistance = 400
                 speaker.CameraMode = "Classic"
                 speaker.Character.Head.Anchored = false
-                getgenv().autotrain = true
             end
         )()
     end
