@@ -6,7 +6,18 @@ while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetServi
     wait(2)
 end
 
-local FsMain = {"1xToxsins", "vSebyy", "hikiin", "HxQueennn", "0riginalHybridKlaus", "IV9M", "IV6M", "xqCorey", "varlxer", "xSirTim"}
+local FsMain = {
+    "1xToxsins",
+    "vSebyy",
+    "hikiin",
+    "HxQueennn",
+    "0riginalHybridKlaus",
+    "IV9M",
+    "IV6M",
+    "xqCorey",
+    "varlxer",
+    "xSirTim"
+}
 local PpMain = {"XiiUnWorthy"}
 
 local player = game:GetService("Players").LocalPlayer
@@ -24,6 +35,12 @@ end
 
 coroutine.wrap(
     function()
+        local NewPart = Instance.new("Part", game.Workspace)
+        NewPart.Position = Vector3.new(-272, 277.5, 1004) --Position of the part.
+
+        NewPart.Anchored = true
+        NewPart.Size = Vector3.new(100, 1.5, 100)
+        NewPart.Color = Color3.fromRGB(109, 232, 246)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/Stats", true))()
         game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
         wait(3)
@@ -93,8 +110,7 @@ coroutine.wrap(
         )()
         coroutine.wrap(
             function()
-            
-wait(3)
+                wait(3)
                 local speaker = game.Players.LocalPlayer
 
                 local workspace = game:GetService("Workspace")
