@@ -273,11 +273,11 @@ local function Gui()
         pcall(
             function()
                 if getgenv().autotrain == false then
-                    script.Parent.Text = ("AutoTrain : ON")
-                    script.Parent.TextColor3 = Color3.fromRGB(0, 255, 0)
-                elseif getgenv().autotrain == true then
                     script.Parent.Text = ("AutoTrain : OFF")
                     script.Parent.TextColor3 = Color3.fromRGB(255, 0, 4)
+                elseif getgenv().autotrain == true then
+                    script.Parent.Text = ("AutoTrain : ON")
+                    script.Parent.TextColor3 = Color3.fromRGB(0, 255, 0)
                 end
 
                 script.Parent.MouseButton1Click:Connect(
