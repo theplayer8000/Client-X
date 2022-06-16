@@ -259,7 +259,7 @@ local function Gui()
 				getgenv().autotrain = false
 				script.Parent.Text = ("AutoTrain : OFF")
 				script.Parent.TextColor3 = Color3.fromRGB(255, 0, 4)
-			end
+			end)
 
 
 			script.Parent.MouseButton1Click:Connect(function()
