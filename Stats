@@ -1,0 +1,202 @@
+local function Gui()
+	
+	local Stats = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local Fist = Instance.new("TextLabel")
+	local UICorner = Instance.new("UICorner")
+	local Body = Instance.new("TextLabel")
+	local UICorner_2 = Instance.new("UICorner")
+	local psychic = Instance.new("TextLabel")
+	local UICorner_3 = Instance.new("UICorner")
+	local UICorner_4 = Instance.new("UICorner")
+	local UIStroke = Instance.new("UIStroke")
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local Name = Instance.new("TextLabel")
+	local UICorner_5 = Instance.new("UICorner")
+
+	Stats.Name = "Stats"
+	Stats.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Stats.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Frame.Parent = Stats
+	Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Frame.Position = UDim2.new(0.423780501, 0, 0.382456154, 0)
+	Frame.Size = UDim2.new(0.152439028, 0, 0.223391816, 0)
+
+	Fist.Name = "Fist"
+	Fist.Parent = Frame
+	Fist.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Fist.BorderSizePixel = 0
+	Fist.Position = UDim2.new(0, 0, 0.204188481, 0)
+	Fist.Size = UDim2.new(1, 0, 0.261780113, 0)
+	Fist.Font = Enum.Font.Cartoon
+	Fist.Text = "Fist"
+	Fist.TextColor3 = Color3.fromRGB(255, 0, 4)
+	Fist.TextScaled = true
+	Fist.TextSize = 14.000
+	Fist.TextWrapped = true
+
+	UICorner.Parent = Fist
+
+	Body.Name = "Body"
+	Body.Parent = Frame
+	Body.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Body.BorderSizePixel = 0
+	Body.Position = UDim2.new(0, 0, 0.469188482, 0)
+	Body.Size = UDim2.new(1, 0, 0.261780113, 0)
+	Body.Font = Enum.Font.Cartoon
+	Body.Text = "Body"
+	Body.TextColor3 = Color3.fromRGB(255, 85, 0)
+	Body.TextScaled = true
+	Body.TextSize = 14.000
+	Body.TextWrapped = true
+
+	UICorner_2.Parent = Body
+
+	psychic.Name = "psychic"
+	psychic.Parent = Frame
+	psychic.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	psychic.BorderSizePixel = 0
+	psychic.Position = UDim2.new(0, 0, 0.733062804, 0)
+	psychic.Size = UDim2.new(1, 0, 0.261780113, 0)
+	psychic.Font = Enum.Font.Cartoon
+	psychic.Text = "Psychic"
+	psychic.TextColor3 = Color3.fromRGB(21, 0, 255)
+	psychic.TextScaled = true
+	psychic.TextSize = 14.000
+	psychic.TextWrapped = true
+
+	UICorner_3.Parent = psychic
+
+	UICorner_4.Parent = Frame
+
+	UIStroke.Color = Color3.fromRGB(68, 68, 68)
+	UIStroke.Thickness = 5.000
+	UIStroke.Parent = Frame
+
+	UIAspectRatioConstraint.Parent = Frame
+	UIAspectRatioConstraint.AspectRatio = 1.047
+
+	Name.Name = "Name"
+	Name.Parent = Frame
+	Name.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Name.BorderSizePixel = 0
+	Name.Size = UDim2.new(1, 0, 0.162303671, 0)
+	Name.Font = Enum.Font.Cartoon
+	Name.Text = "Name"
+	Name.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Name.TextScaled = true
+	Name.TextSize = 14.000
+	Name.TextWrapped = true
+
+	UICorner_5.Parent = Name
+
+	local function YNMKKBI_fake_script() -- Frame.Dragify 
+		local script = Instance.new('LocalScript', Frame)
+
+		local UserInputService = game:GetService("UserInputService")
+
+		local gui = script.Parent
+
+		local dragging
+		local dragInput
+		local dragStart
+		local startPos
+
+		local function update(input)
+			local delta = input.Position - dragStart
+			gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+
+		gui.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				dragging = true
+				dragStart = input.Position
+				startPos = gui.Position
+
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+
+		gui.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+
+		UserInputService.InputChanged:Connect(function(input)
+			if input == dragInput and dragging then
+				update(input)
+			end
+		end)
+	end
+	coroutine.wrap(YNMKKBI_fake_script)()
+
+
+	local abbreviations = {
+		"",
+		"K",
+		"M",
+		"B",
+		"T",
+		"Qa",
+		"Qi",
+		"Sx",
+		"Sp",
+		"Oc",
+		"No",
+		"Dc",
+		"Un",
+		"Duo",
+		"Tre",
+		"Qua",
+		"Qui",
+		"Sed",
+		"Sep",
+		"Oct",
+		"Nov",
+		"V"
+	}
+	-- You can remove or add if you feel
+	-- 100Qa, 700Oc, 999Sep, etc.
+
+	local function Format(value, idp)
+		local ex = math.floor(math.log(math.max(1, math.abs(value)), 1000))
+		local abbrevs = abbreviations[1 + ex] or ("e+" .. ex)
+		local normal = math.floor(value * ((10 ^ idp) / (1000 ^ ex))) / (10 ^ idp)
+
+		return ("%." .. idp .. "f%s"):format(normal, abbrevs)
+	end
+
+
+
+	game:GetService("RunService").Heartbeat:Connect(function()
+		coroutine.wrap(function()
+
+			local fist = game:GetService("Players").LocalPlayer.PrivateStats.FistStrength.Value
+			local body = game:GetService("Players").LocalPlayer.PrivateStats.BodyToughness.Value
+			local psychic_power = game:GetService("Players").LocalPlayer.PrivateStats.PsychicPower.Value
+
+			Name.Text = game:GetService("Players").LocalPlayer.Name
+			Fist.Text = ("Fist Strength ".. Format(fist,6))
+			Body.Text = ("Body Toughness ".. Format(body,6))
+			psychic.Text = ("Psychic Power ".. Format(psychic_power,6))
+
+		end)()
+	end
+	)
+	
+end
+
+
+
+local player = game:GetService("Players").LocalPlayer
+
+pcall(function()
+	player.CharacterAdded:Connect(Gui)
+end)
+
