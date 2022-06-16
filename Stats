@@ -250,12 +250,10 @@ local function Gui()
 
 			if getgenv().autotrain == false then
 
-				getgenv().autotrain = true
 				script.Parent.Text = ("AutoTrain : ON")
 				script.Parent.TextColor3 = Color3.fromRGB(0,255,0)
 
 			elseif getgenv().autotrain == true then
-				getgenv().autotrain = false
 				script.Parent.Text = ("AutoTrain : OFF")
 				script.Parent.TextColor3 = Color3.fromRGB(255, 0, 4)
 			end
