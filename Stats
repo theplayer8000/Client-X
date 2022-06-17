@@ -38,7 +38,7 @@ local function Gui()
     --Properties:
 
     Stats.Name = "Stats"
-    Stats.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    Stats.Parent = game:GetService("CoreGui")
     Stats.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     Stats.ResetOnSpawn = false
 
