@@ -43,7 +43,7 @@ coroutine.wrap(
         NewPart.Anchored = true
         NewPart.Size = Vector3.new(100, 1.5, 100)
         NewPart.Color = Color3.fromRGB(109, 232, 246)
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/Stats", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/Stats.lua", true))()
         game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
         wait(3)
         if TrainFist == true then
