@@ -369,7 +369,7 @@ local function Gui()
                             syn.queue_on_teleport('game:GetService("ReplicatedFirst"):RemoveDefaultLoadingScreen()')
                         end
 
-                        game:GetService("TeleportService"):Teleport(game.PlaceId, Players.LocalPlayer)
+                       game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)
                     end
                 )
             end
