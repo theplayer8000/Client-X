@@ -443,7 +443,23 @@ while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetServi
     task.wait(1)
 end
 
-local cx = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train"))();'
+coroutine.wrap(
+    function()
+        game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(
+            function()
+                if syn.queue_on_teleport then
+                    syn.queue_on_teleport('game:GetService("ReplicatedFirst"):RemoveDefaultLoadingScreen()')
+                end
+                game:GetService("TeleportService"):Teleport(game.PlaceId, Players.LocalPlayer)
+                local cx =
+                    'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train"))();'
+                if syn.queue_on_teleport then
+                    syn.queue_on_teleport(cx)
+                end
+            end
+        )
+    end
+)()
 
 player = game:GetService("Players").LocalPlayer
 
