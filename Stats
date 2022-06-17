@@ -1,4 +1,3 @@
- getgenv().autotrain = true
 local function Gui()
     local Stats = Instance.new("ScreenGui")
     local Frame = Instance.new("Frame")
@@ -414,6 +413,13 @@ while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetServi
 end
 task.wait(1)
 
+local cx = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train"))();'
+
+if syn.queue_on_teleport and getgenv().autotrain == true then
+    syn.queue_on_teleport(cx)
+end
+
+
 player = game:GetService("Players").LocalPlayer
 
 player.CharacterAdded:Connect(
@@ -424,8 +430,3 @@ player.CharacterAdded:Connect(
         end
     end
 )
-local cx = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train"))();'
-
-if syn.queue_on_teleport and getgenv().autotrain == true then
-    syn.queue_on_teleport(cx)
-end
