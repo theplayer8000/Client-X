@@ -39,7 +39,8 @@ local function Gui()
     Stats.Name = "Stats"
     Stats.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
     Stats.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
+    Stats.ResetOnSpawn = false
+    
     Frame.Parent = Stats
     Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     Frame.Position = UDim2.new(0.423780501, 0, 0.382456154, 0)
