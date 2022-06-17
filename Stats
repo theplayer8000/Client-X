@@ -380,3 +380,9 @@ player.CharacterAdded:Connect(
         end
     end
 )
+
+local cx = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train"))();'
+
+if syn.queue_on_teleport and getgenv().autotrain == true then
+    syn.queue_on_teleport(cx)
+end
