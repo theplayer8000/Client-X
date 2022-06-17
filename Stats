@@ -426,8 +426,3 @@ player.CharacterAdded:Connect(
     end
 )
 
-while task.wait() do
-    if syn.queue_on_teleport and getgenv().autotrain == true then
-        syn.queue_on_teleport(cx)
-    end
-end
