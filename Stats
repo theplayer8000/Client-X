@@ -296,10 +296,10 @@ local function Gui()
         pcall(
             function()
                 if getgenv().autotrain == false then
-                   script.Parent.Text = ("AutoTrain : OFF")
+                    script.Parent.Text = ("AutoTrain : OFF")
                     script.Parent.TextColor3 = Color3.fromRGB(255, 0, 4)
                 elseif getgenv().autotrain == true then
-                   script.Parent.Text = ("AutoTrain : ON")
+                    script.Parent.Text = ("AutoTrain : ON")
                     script.Parent.TextColor3 = Color3.fromRGB(0, 255, 0)
                 end
 
@@ -415,11 +415,6 @@ task.wait(1)
 
 local cx = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train"))();'
 
-if syn.queue_on_teleport and getgenv().autotrain == true then
-    syn.queue_on_teleport(cx)
-end
-
-
 player = game:GetService("Players").LocalPlayer
 
 player.CharacterAdded:Connect(
@@ -430,3 +425,9 @@ player.CharacterAdded:Connect(
         end
     end
 )
+
+while task.wait() do
+    if syn.queue_on_teleport and getgenv().autotrain == true then
+        syn.queue_on_teleport(cx)
+    end
+end
