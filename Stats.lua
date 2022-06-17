@@ -424,7 +424,7 @@ local function Gui()
                             Fist.Text = ("Fist Strength " .. Format(fist, 6))
                             Body.Text = ("Body Toughness " .. Format(body, 6))
                             psychic.Text = ("Psychic Power " .. Format(psychic_power, 6))
-                            Rep.Text = ("Rep " .. Format(rep, 0))
+                            Rep.Text = ("Rep " .. Format(rep, 2))
                             Tokens.Text = ("Tokens " .. Format(tokens, 1))
                         end
                     )()
