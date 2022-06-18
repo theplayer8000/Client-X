@@ -1,5 +1,7 @@
 --Not made by me
-
+if syn.queue_on_teleport then
+                                syn.queue_on_teleport('game:GetService("ReplicatedFirst"):RemoveDefaultLoadingScreen()')
+                            end
 local PlaceID = game.PlaceId
 local AllIDs = {}
 local foundAnything = ""
