@@ -139,18 +139,20 @@ game:GetService("RunService").Heartbeat:Connect(
                             game.Players.LocalPlayer.Character.Head.CFrame.y,
                             game.Players.LocalPlayer.Character.Head.CFrame.z
 
-                        if cframey <= 39 or core.Humanoid:GetState() == Enum.HumanoidStateType.Swimming then
-                            game.Players.LocalPlayer.Character:remove()
-                            wait()
-                            game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
-                            serverhop = true
-                            if serverhop == true then
-                                serverhop = false
-                                if syn.queue_on_teleport then
-                                    syn.queue_on_teleport(autotrain)
+                        if getgenv().autotrain == true then
+                            if cframey <= 39 or core.Humanoid:GetState() == Enum.HumanoidStateType.Swimming then
+                                game.Players.LocalPlayer.Character:remove()
+                                wait()
+                                game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+                                serverhop = true
+                                if serverhop == true then
+                                    serverhop = false
+                                    if syn.queue_on_teleport then
+                                        syn.queue_on_teleport(autotrain)
+                                    end
+                                    LogPlayer()
+                                    Teleport()
                                 end
-                                LogPlayer()
-                                Teleport()
                             end
                         end
                     end
@@ -159,4 +161,3 @@ game:GetService("RunService").Heartbeat:Connect(
         )()
     end
 )
-
