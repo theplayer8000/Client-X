@@ -5,7 +5,7 @@ while not game:IsLoaded() or not game:GetService("CoreGui") or
 
 
 
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/safety.lua"))();
 
 pc = #game.Players:GetPlayers()
 getgenv().autorj = true
