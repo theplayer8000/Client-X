@@ -130,34 +130,33 @@ game:GetService("RunService").Heartbeat:Connect(
     function()
         coroutine.wrap(
             function()
-                while task.wait(1) and getgenv().toggle do
-                    nearestP()
+                nearestP()
 
-                    pcall(
-                        function()
-                            local cframex, cframey, cframez =
-                                game.Players.LocalPlayer.Character.Head.CFrame.x,
-                                game.Players.LocalPlayer.Character.Head.CFrame.y,
-                                game.Players.LocalPlayer.Character.Head.CFrame.z
+                pcall(
+                    function()
+                        local cframex, cframey, cframez =
+                            game.Players.LocalPlayer.Character.Head.CFrame.x,
+                            game.Players.LocalPlayer.Character.Head.CFrame.y,
+                            game.Players.LocalPlayer.Character.Head.CFrame.z
 
-                            if cframey <= 39 or core.Humanoid:GetState() == Enum.HumanoidStateType.Swimming then
-                                game.Players.LocalPlayer.Character:remove()
-                                wait()
-                                game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
-                                serverhop = true
-                                if serverhop == true then
-                                    serverhop = false
-                                    if syn.queue_on_teleport then
-                                        syn.queue_on_teleport(autotrain)
-                                    end
-                                    LogPlayer()
-                                    Teleport()
+                        if cframey <= 39 or core.Humanoid:GetState() == Enum.HumanoidStateType.Swimming then
+                            game.Players.LocalPlayer.Character:remove()
+                            wait()
+                            game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+                            serverhop = true
+                            if serverhop == true then
+                                serverhop = false
+                                if syn.queue_on_teleport then
+                                    syn.queue_on_teleport(autotrain)
                                 end
+                                LogPlayer()
+                                Teleport()
                             end
                         end
-                    )
-                end
+                    end
+                )
             end
         )()
     end
 )
+
