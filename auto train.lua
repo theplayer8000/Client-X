@@ -133,4 +133,23 @@ if getgenv().autorj == true then
             )()
         end
     )()
+    coroutine.wrap(
+        function()
+            wait(10)
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/serverHop.lua"))()
+
+            while task.wait() do
+                if
+                    game.Players.LocalPlayer.Character:FindFirstChild("ForceField") or
+                        game.Players.LocalPlayer.Character:FindFirstChild("GodModeShield")
+                 then
+                    print("player has ff")
+                else
+                    print("no ff server hopping")
+
+                    Teleport()
+                end
+            end
+        end
+    )()
 end
