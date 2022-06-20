@@ -5,7 +5,7 @@ while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetServi
     not game:GetService("Players").LocalPlayer.PlayerGui do
     wait(2)
 end
-getgenv().autotrain = true
+
 if getgenv().autotrain == true then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/antilag.lua"))()
 
