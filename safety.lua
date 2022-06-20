@@ -1,5 +1,4 @@
-pcall(
-    function()
+
         loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/serverHop.lua"))()
         local autotrain =
             'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train.lua"))();'
@@ -26,7 +25,7 @@ pcall(
         local Players = game:GetService("Players")
         local CheckDistance = 100
         function nearestP()
-            local lp = Players.LocalPlayer.Character:WaitForChild("Head")
+           pcall(function()lp = Players.LocalPlayer.Character:WaitForChild("Head") end)
             for _, player in pairs(Players:GetPlayers()) do
                 pcall(
                     function()
@@ -170,5 +169,4 @@ pcall(
                 )()
             end
         )
-    end
-)
+
