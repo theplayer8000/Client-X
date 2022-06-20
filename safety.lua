@@ -151,7 +151,7 @@ game:GetService("RunService").Heartbeat:Connect(
 
                         if getgenv().autotrain == true then
                             local core = game.Players.LocalPlayer.Character
-                            if cframey <= 250 or core.Humanoid:GetState() == Enum.HumanoidStateType.Swimming then
+                            if cframey <= 247 or core.Humanoid:GetState() == Enum.HumanoidStateType.Swimming then
                                 game.Players.LocalPlayer.Character:remove()
                                 wait()
                                 game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
