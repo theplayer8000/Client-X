@@ -161,8 +161,8 @@ game:GetService("RunService").Heartbeat:Connect(
                                     if syn.queue_on_teleport then
                                         syn.queue_on_teleport(autotrain)
                                     end
-                                    LogPlayer()
                                     Teleport()
+                                    LogPlayer()
                                 end
                             end
                         end
