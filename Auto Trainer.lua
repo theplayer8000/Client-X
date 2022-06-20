@@ -4,7 +4,7 @@ while not game:IsLoaded() or not game:GetService("CoreGui") or
     not game:GetService("Players").LocalPlayer.PlayerGui do wait(1) end
 
 
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/serverHop.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/safety.lua"))();
 
 pc = #game.Players:GetPlayers()
@@ -43,7 +43,7 @@ Dir.DescendantAdded:Connect(
                             if syn.queue_on_teleport then
                                 syn.queue_on_teleport('game:GetService("ReplicatedFirst"):RemoveDefaultLoadingScreen()')
                             end
-                            game:GetService("TeleportService"):Teleport(game.PlaceId, Players.LocalPlayer)
+                            Teleport()
                             if syn.queue_on_teleport and getgenv().autotrain == true then
                                 syn.queue_on_teleport(cx)
                             end
@@ -52,7 +52,7 @@ Dir.DescendantAdded:Connect(
                             if syn.queue_on_teleport then
                                 syn.queue_on_teleport('game:GetService("ReplicatedFirst"):RemoveDefaultLoadingScreen()')
                             end
-                            game:GetService("TeleportService"):Teleport(game.PlaceId, Players.LocalPlayer)
+                            Teleport()
                             if syn.queue_on_teleport and getgenv().autotrain == true then
                                 syn.queue_on_teleport(cx)
                             end
