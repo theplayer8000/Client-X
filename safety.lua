@@ -106,7 +106,7 @@
             end
 
             for i, v in pairs(nearest) do
-                webhook(v, "Joined the game.")
+                webhook(v, "Potential User logged within 200 studs of characterr.")
             end
         end
 
