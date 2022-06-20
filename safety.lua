@@ -1,4 +1,3 @@
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/serverHop.lua"))()
 local autotrain =
     'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train.lua"))();'
@@ -131,6 +130,13 @@ game:GetService("RunService").Heartbeat:Connect(
         coroutine.wrap(
             function()
                 nearestP()
+                local playerGui = game.Players.LocalPlayer.PlayerGui
+                for i, v in ipairs(playerGui:GetChildren()) do
+                    if v:IsA("ScreenGui") and v.Name == "SoftShutdownGui" then
+                        v:Destroy()
+                        Teleport()
+                    end
+                end
 
                 pcall(
                     function()
