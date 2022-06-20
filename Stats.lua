@@ -363,7 +363,9 @@ local function Gui()
                 script.Parent.MouseButton1Click:Connect(
                     function()
                         loadstring(
-                            game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train.lua")
+                            game:HttpGet(
+                                "https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train.lua"
+                            )
                         )()
                     end
                 )
@@ -449,14 +451,16 @@ coroutine.wrap(
             function()
                 game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(
                     function()
-                        if syn.queue_on_teleport then
-                            syn.queue_on_teleport('game:GetService("ReplicatedFirst"):RemoveDefaultLoadingScreen()')
-                        end
-                        game:GetService("TeleportService"):Teleport(game.PlaceId, Players.LocalPlayer)
-                        local cx =
-                            'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train.lua"))();'
-                        if syn.queue_on_teleport then
-                            syn.queue_on_teleport(cx)
+                        if getgenv().autotrain == true then
+                            if syn.queue_on_teleport then
+                                syn.queue_on_teleport('game:GetService("ReplicatedFirst"):RemoveDefaultLoadingScreen()')
+                            end
+                            game:GetService("TeleportService"):Teleport(game.PlaceId, Players.LocalPlayer)
+                            local cx =
+                                'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train.lua"))();'
+                            if syn.queue_on_teleport then
+                                syn.queue_on_teleport(cx)
+                            end
                         end
                     end
                 )
