@@ -148,7 +148,7 @@
 
                                 if getgenv().autotrain == true then
                                     local core = game.Players.LocalPlayer.Character
-                                    if cframey <= 200 or core.Humanoid:GetState() == Enum.HumanoidStateType.Swimming then
+                                    if cframey <= 270 or core.Humanoid:GetState() == Enum.HumanoidStateType.Swimming then
                                         game.Players.LocalPlayer.Character:remove()
                                         wait()
                                         game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
