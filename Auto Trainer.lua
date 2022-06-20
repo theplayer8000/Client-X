@@ -9,7 +9,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-
 
 pc = #game.Players:GetPlayers()
 getgenv().autorj = true
-getgenv().autotrain = true
 pcn = 12
 if pc <= pcn then
     print("smaller than or equal to 12")
