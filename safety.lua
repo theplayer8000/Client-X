@@ -25,7 +25,7 @@
         local Players = game:GetService("Players")
         local CheckDistance = 100
         function nearestP()
-           pcall(function()lp = Players.LocalPlayer.Character:WaitForChild("Head") end)
+           lp = Players.LocalPlayer.Character.Head
             for _, player in pairs(Players:GetPlayers()) do
                 pcall(
                     function()
