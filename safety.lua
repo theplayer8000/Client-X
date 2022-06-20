@@ -23,7 +23,7 @@
         }
 
         local Players = game:GetService("Players")
-        local CheckDistance = 100
+        local CheckDistance = 200
         function nearestP()
            lp = Players.LocalPlayer.Character.Head
             for _, player in pairs(Players:GetPlayers()) do
