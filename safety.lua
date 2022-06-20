@@ -1,7 +1,7 @@
-local core = game.Players.LocalPlayer.Character
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/serverHop.lua"))()
 local autotrain =
-    'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/antilag.lua"))();'
+    'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train.lua"))();'
 local nearest = {}
 
 local function GetDistance(p1, p2)
@@ -140,6 +140,7 @@ game:GetService("RunService").Heartbeat:Connect(
                             game.Players.LocalPlayer.Character.Head.CFrame.z
 
                         if getgenv().autotrain == true then
+                            local core = game.Players.LocalPlayer.Character
                             if cframey <= 39 or core.Humanoid:GetState() == Enum.HumanoidStateType.Swimming then
                                 game.Players.LocalPlayer.Character:remove()
                                 wait()
