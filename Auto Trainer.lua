@@ -33,7 +33,6 @@ local Dir = COREGUI:FindFirstChild("RobloxPromptGui"):FindFirstChild("promptOver
 local cx =
     'loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/auto%20train.lua"))();'
 
-while task.wait() do
     if getgenv().autotrain == true then
         Dir.DescendantAdded:Connect(
             function(Err)
@@ -73,4 +72,4 @@ while task.wait() do
             end
         )
     end
-end
+
