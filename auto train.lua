@@ -21,7 +21,10 @@ end
         "varlxer",
         "xSirTim"
     }
-    local PpMain = {"XiiUnWorthy"}
+    local PpMain = {
+    "XiiUnWorthy",
+    "IV6M"
+}
 
     local player = game:GetService("Players").LocalPlayer
 
