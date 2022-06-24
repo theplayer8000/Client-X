@@ -138,7 +138,9 @@ game:GetService("RunService").Heartbeat:Connect(
                 for i, v in ipairs(playerGui:GetChildren()) do
                     if v:IsA("ScreenGui") and v.Name == "SoftShutdownGui" then
                         v:Destroy()
+                        wait(1.5)
                         Teleport()
+                        wait(1.5)
                     end
                 end
 
@@ -161,7 +163,9 @@ game:GetService("RunService").Heartbeat:Connect(
                                     if syn.queue_on_teleport then
                                         syn.queue_on_teleport(autotrain)
                                     end
+                                    wait(1.5)
                                     Teleport()
+                                    wait(1.5)
                                     LogPlayer()
                                 end
                             end
