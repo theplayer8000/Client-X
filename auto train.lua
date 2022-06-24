@@ -48,6 +48,7 @@ end
             NewPart.Size = Vector3.new(100, 1.5, 100)
             NewPart.Color = Color3.fromRGB(109, 232, 246)
             loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/Stats.lua", true))()
+        wait(2)
             game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
             wait(3)
             if TrainFist == true then
@@ -138,7 +139,7 @@ end
     )()
     coroutine.wrap(
         function()
-            wait(10)
+            wait(15)
             loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/serverHop.lua"))()
 
             while task.wait() do
@@ -149,7 +150,7 @@ end
                     print("player has ff")
                 else
                     print("no ff server hopping")
-
+                    wait(2)
                     Teleport()
                 end
             end
