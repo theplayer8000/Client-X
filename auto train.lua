@@ -150,8 +150,9 @@ end
                     print("player has ff")
                 else
                     print("no ff server hopping")
-                    wait(2)
+                    wait()
                     Teleport()
+                wait(1.5)
                 end
             end
         end
