@@ -18,7 +18,8 @@ local whitelisted = {
     "xqCorey",
     "varlxer",
     "xSirTim",
-    "XiiUnWorthy"
+    "XiiUnWorthy",
+    "SporadicSlasher"
 }
 
 local Players = game:GetService("Players")
