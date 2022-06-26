@@ -60,6 +60,7 @@ local cx =
                                             'game:GetService("ReplicatedFirst"):RemoveDefaultLoadingScreen()'
                                         )
                                     end
+                                wait(1)
                                     Teleport()
                                     if syn.queue_on_teleport and getgenv().autotrain == true then
                                         syn.queue_on_teleport(cx)
