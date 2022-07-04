@@ -3,7 +3,7 @@ if game.PlaceId ~= 2202352383 then
 end
 while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetService("Players").LocalPlayer or
     not game:GetService("Players").LocalPlayer.PlayerGui do
-    wait(1)
+    wait(5)
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/theplayer8000/Client-X/main/serverHop.lua"))()
@@ -42,7 +42,7 @@ local cx =
                             if Err.Text:sub(0, 12) == "Disconnected" then
                                 if #Players:GetPlayers() <= 1 then
                                     Players.LocalPlayer:Kick("\nRejoining...")
-                                    task.wait()
+                                    task.wait(0.5)
                                     game:GetService("GuiService"):ClearError()
                                     if syn.queue_on_teleport then
                                         syn.queue_on_teleport(
