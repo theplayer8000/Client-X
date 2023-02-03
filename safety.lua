@@ -25,10 +25,11 @@ local whitelisted = {
 local Players = game:GetService("Players")
 local CheckDistance = 200
 function nearestP()
-    lp = Players.LocalPlayer.Character.Head
+   
     for _, player in pairs(Players:GetPlayers()) do
         pcall(
             function()
+                 lp = Players.LocalPlayer.Character.Head
                 if
                     player.Character and player.Character.Head and player.Character.Humanoid.Health ~= 0 and
                         not table.find(whitelisted, player.Name)
