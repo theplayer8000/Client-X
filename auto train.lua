@@ -19,12 +19,12 @@ local FsMain = {
     "xqCorey",
     "varlxer",
     "xSirTim",
-    "SporadicSlasher",
-    "GeiNaGe"
+    "SporadicSlasher"
 }
 local PpMain = {
     "XiiUnWorthy",
-    "IV6M"
+    "IV6M",
+    "GeiNaGe"
 }
 
 local player = game:GetService("Players").LocalPlayer
