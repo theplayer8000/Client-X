@@ -19,7 +19,8 @@ local FsMain = {
     "xqCorey",
     "varlxer",
     "xSirTim",
-    "SporadicSlasher"
+    "SporadicSlasher",
+    "GeiNaGe"
 }
 local PpMain = {
     "XiiUnWorthy",
