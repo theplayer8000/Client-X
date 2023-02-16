@@ -20,6 +20,7 @@ local FsMain = {
     "varlxer",
     "xSirTim",
     "SporadicSlasher",
+    "Sinfliction",
     "GeiNaGe"
 }
 local PpMain = {
