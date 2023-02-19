@@ -69,8 +69,8 @@ coroutine.wrap(
                 function()
                     coroutine.wrap(
                         function()
-                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-                                CFrame.new(-369, 15735, -9) * CFrame.Angles(0, math.rad(269), 0)
+                            --game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                --CFrame.new(-369, 15735, -9) * CFrame.Angles(0, math.rad(269), 0)
                             game.ReplicatedStorage.RemoteEvent:FireServer({"+FS6"})
                         end
                     )()
@@ -79,7 +79,6 @@ coroutine.wrap(
         elseif TrainPsychic == true then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
                 CFrame.new(-266, 281, 1001) * CFrame.Angles(0, math.rad(269), 0)
-
             task.wait(1)
             player.Character.UpperTorso.Waist:Destroy()
             task.wait(1)
@@ -92,50 +91,13 @@ coroutine.wrap(
                 function()
                     coroutine.wrap(
                         function()
-                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
-                                CFrame.new(-2544, 5412, -495) * CFrame.Angles(0, math.rad(269), 0)
+                            --game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                --CFrame.new(-2544, 5412, -495) * CFrame.Angles(0, math.rad(269), 0)
                             game.ReplicatedStorage.RemoteEvent:FireServer({"+PP6"})
                         end
                     )()
                 end
             )
         end
-        coroutine.wrap(
-            function()
-                game:GetService("ReplicatedStorage").GhostRiderPart.CFrame =
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-
-                while wait() do
-                    pcall(
-                        function()
-                            local vuser = game:GetService("VirtualUser")
-                            vuser:CaptureController()
-
-                            vuser:ClickButton1(Vector2.new(989, 133))
-                        end
-                    )
-                end
-            end
-        )()
-        coroutine.wrap(
-            function()
-                wait(3)
-                local speaker = game.Players.LocalPlayer
-
-                local workspace = game:GetService("Workspace")
-
-                workspace.CurrentCamera:remove()
-                wait(.1)
-                repeat
-                    wait()
-                until speaker.Character ~= nil
-                workspace.CurrentCamera.CameraSubject = speaker.Character:FindFirstChildWhichIsA("Humanoid")
-                workspace.CurrentCamera.CameraType = "Custom"
-                speaker.CameraMinZoomDistance = 0.5
-                speaker.CameraMaxZoomDistance = 400
-                speaker.CameraMode = "Classic"
-                speaker.Character.Head.Anchored = false
-            end
-        )()
     end
 )()
