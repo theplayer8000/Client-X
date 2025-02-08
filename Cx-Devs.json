@@ -6,9 +6,13 @@
         "Soul" : ""
     },
     "UserIds" : {
-        "Tosin" : 239382111,
+        "Tosin" : "239382111",
         "Tosin2" : "795032987",
-        "Corey" : 395077169,
+        "Corey" : "395077169",
         "Soul" : ""
+    },"HWID" : {
+        "Tosin" : "97AB81EB-36A9-4B28-950E-74DA07F67E58",
+        "Tosin2" : "",
+        "Hollo" : ""
     }
 }
